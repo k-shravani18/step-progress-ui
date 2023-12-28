@@ -1,9 +1,13 @@
 "use client";
-import React, { useState } from "react";
-import  "./styles.css";
+import React, { useState, useEffect } from "react";
+import "./styles.css";
 
 const MultiStepForm = () => {
   const [currentTab, setCurrentTab] = useState(0);
+
+  useEffect(() => {
+    showTab(currentTab); 
+  }, [currentTab]);
 
   const showTab = (n) => {
     const x = document.getElementsByClassName("step");
